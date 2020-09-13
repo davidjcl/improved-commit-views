@@ -1,11 +1,17 @@
 # improved-commit-views
 
+What is it?
+
+The tool runs locally on your browser. Its objective is to create a commit patch HTML page with a different file ordering (other than the traditional alphabetical) and some extra elements, not provided in the traditional GitHub interface.
+Works only for public Java repositories hosted on GitHub.
+
+
 Before running:
 
 - Make sure to edit display/src/main/resources/application.yml with one of your GitHub Auth Tokens so the application runs without authentication problems.
 - The tool was tested on Windows and Ubuntu without problems, should support MAC OS but not tested.
 - At least Java 12 required to run.
-- Tool works only with GitHub public repositories
+- Tool works only with GitHub public repositories and works over their pull requests.
 
 
 How to run:
