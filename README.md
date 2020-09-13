@@ -2,7 +2,7 @@
 
 What is it?
 
-The tool runs locally on your browser. Its objective is to create a commit patch HTML page with a different file ordering (other than the traditional alphabetical) and some extra elements, not provided in the traditional GitHub interface.
+The tool runs locally on your machine. Its objective is to create a commit patch HTML page with a different file ordering (other than the traditional alphabetical) and some extra elements, not provided in the traditional GitHub interface.
 Works only for public Java repositories hosted on GitHub.
 
 
