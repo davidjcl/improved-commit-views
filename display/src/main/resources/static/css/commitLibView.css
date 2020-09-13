@@ -1,0 +1,161 @@
+.relatedFilesBox {
+	position:relative;
+	display:block;
+	
+}
+
+#contentDiv{
+	display: inline-block;
+	width: 100%;
+	margin-top: 5%;
+}
+
+.boxwrapper {
+	position:relative;
+	display:block;
+	float: right; 
+	width: 29%;
+}
+
+.relatedFilesTable {
+	display:block;
+	border:1px solid #d3d3d3;
+	background:#fefefe;
+	width:100%;
+	margin:0 auto 5px;
+	border-radius:3px;
+	border-collapse: collapse;
+	font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	
+}
+
+.relatedFilesTable tbody {
+	display: block;
+	overflow: auto;
+}
+
+.relatedFilesTable tbody td {
+	display: block;
+ 	padding-top: 1%;
+ 	padding-bottom: 1%;
+	text-align:left;
+	font-size: 95%;
+	white-space: nowrap
+	
+}
+
+
+
+.relatedFilesTable thead {
+	display: block;
+ 	max-width: 100%;
+	background-color: #f7f7f7;
+	padding:2.3%;
+	font-size: medium;
+	border-bottom: 1px solid #d3d3d3;
+}
+
+
+
+#relatedFilesTableBody td:hover {
+	display: inline-table-row;
+  	background-color: #F6F1F1;
+ 
+}
+
+/* unvisited link */
+.relatedFilesTable a {
+  color: #4169E1;
+  text-decoration: none;
+}
+
+.relatedFilesTable a:hover {
+  color: #4169E1;
+  text-decoration: none;
+  background-color: #F6F1F1;
+}
+
+.infoIcon {
+	position: absolute;
+	display: inline-block;
+	right: 1%;
+}
+
+.infoIcon:hover:after{
+		position: absolute;
+		right: 100%;
+		font-size: 1rem;
+		font-weight: normal;
+		font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		display: inline-block;
+		width: 50rem;
+		height: 6.25rem;
+		background: #f7f7f7;
+		border:1px solid black;
+		border-radius:3px;
+		z-index:1;
+}
+
+#fileInfo:hover:after{
+	content: "File Impact value indicates how important or complex the changes on the file may have been. \
+	Higher value means more complexity or a higher amount of attention may be needed to understand the patch. \A File master version URL may lead to a non existant page if the file \
+	is new and thus non existant on the master branch of the repository.";
+	color: black;
+	white-space: pre-line;
+}
+
+#relatedFilesInfo:hover:after{
+	content: "This table contains the repository files (present on master branch) that may have been used on the patch by being called somehow. Some inaccure files may appear if they have \
+	paths too similar the to actual called file. In this case some files with the same name may be shown and only one of them be actually used.";
+	color: black;
+}
+
+#smellsInfo:hover:after{
+	content: "This table contains information about possible violated conventions present on the patch. Keep in mind that the displayed information is being crossed against Google Java Coding Standard, \
+	if the repository does not follow this convention, feel free to ignore the information provided.";
+	color: black;
+}
+
+#smellsInfoPMD:hover:after{
+	content: "This table contains information about possible violated conventions present on the patch. Keep in mind that the displayed information is being crossed against Java standard good practices \
+	implemented by the PMD tool, if the repository does not follow these practices, feel free to ignore the information provided.";
+	color: black;
+}
+
+.patchBox {
+	width: 70%; 
+	float: left;
+}
+
+#topBar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+#topBar li {
+  float: left;
+  border-right: 1px solid #bbb;
+}
+
+#topBar li:last-child {
+  border-right: none;
+}
+
+#topBar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#topBar li a:hover {
+  background-color: #111;
+}
+

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <p th:text="'Repository Owner: ' + ${apiData.repoToScanOwner}" />
+    <p th:text="'Repository Name: ' + ${apiData.repoToScanName}" />
+    <p th:text="'Repository Owner from api object: ' + ${api.repoToScanOwner}" />
+    <p th:text="'Repository Name from api object: ' + ${api.repoToScanName}" />
+    <a th:href="@{/api/{repoToScanOwner}/{repoToScanName}/pulls/{prNumber}/commits(repoToScanOwner=${api.repoToScanOwner}, repoToScanName=${api.repoToScanName}, prNumber=${prNumber})}"> Return to Pull Request Commits</a>
+    
+    <!--
+    <div th:each="changedFile : ${commit.changedFiles}">
+    	<p th:utext="'ChangedFile name: ' + ${changedFile.name}" />
+   		<p th:utext="'ChangedFile impact value: ' + ${changedFile.impactValue}" />
+   		<p th:utext="'ChangedFile patch: ' + ${#strings.unescapeJava(#strings.replace(#strings.replace(#strings.escapeJava(changedFile.patch),'    ','&#8195;'), '\n','&lt;br /&gt;'))}" />
+  	</div>
+  	-->
+  	
+  	<div th:each="changedFile : ${commit.changedFiles}">
+  		<p th:text="'ChangedFile name: ' + ${changedFile.name}" />
+   		<p th:text="'ChangedFile impact value: ' + ${changedFile.impactValue}" />
+   		<p th:text="'ChangedFile patch: '" />
+    	<textarea rows = "20" style="min-width:500px; max-width:70%;width:70%;" th:text="${changedFile.patch}"></textarea>
+  	</div>
+		
+</body>
+</html>
+
+<tbody>

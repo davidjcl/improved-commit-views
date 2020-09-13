@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+</head>
+<body>
+	
+	<ul id="topBar">
+    	<li><a href="/api">Retrieve another Repository</a></li>
+	</ul>
+	
+    
+    <table class="mainTable">
+			<thead>
+				<tr>
+					<th>Pull Request Number</th>
+ 					<th>Pull Request Title</th>
+
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr th:each="mapEntry : ${prs}">
+         			<td th:text="${mapEntry.key}"></td>
+        			<td><a th:href="@{/api/{repoToScanOwner}/{repoToScanName}/pulls/{prNumber}/commits(repoToScanOwner=${api.repoToScanOwner}, repoToScanName=${api.repoToScanName}, prNumber=${mapEntry.key})}" th:text="${mapEntry.value}"></a></td> 
+    			</tr>
+				
+			</tbody>
+			
+		</table>
+		
+    
+</body>
+</html>

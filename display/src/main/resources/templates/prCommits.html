@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
+</head>
+<body>
+	<ul id="topBar">
+    	<li><a href="/api">Retrieve another Repository</a></li>
+    	<li><a th:href="@{/api/{repoToScanOwner}/{repoToScanName}/pulls(repoToScanOwner=${api.repoToScanOwner}, repoToScanName=${api.repoToScanName})}">Return to repository Pull Requests</a></li>
+	</ul>
+	
+    
+    <div class="load-wrapp">
+	    <div class="load-3">
+	        <p>Processing Request</p>
+	        <div class="line"></div>
+	        <div class="line"></div>
+	        <div class="line"></div>
+	    </div>
+	 </div>
+    
+    <table class="mainTable">
+			<thead>
+				<tr>
+					<th>Commit Sha</th>
+					<th>Commit Message</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr th:each="mapEntry : ${commits}">
+        			<td><a th:href="@{/api/{repoToScanOwner}/{repoToScanName}/pulls/{prNumber}/commit/{sha}(repoToScanOwner=${api.repoToScanOwner}, repoToScanName=${api.repoToScanName}, prNumber=${prNumber}, sha=${mapEntry.key})}" th:text="${mapEntry.key}" onclick="loading();"></a></td> 
+    				<td th:text="${mapEntry.value}"></td>
+    			</tr>
+				
+			</tbody>
+			
+		</table>
+</body>
+</html>
+
+<tbody>

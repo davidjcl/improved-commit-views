@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
+</head>
+<body>
+	
+	<h2 th:text="${error}">Error</h2>
+    <form class="repoForm" onsubmit="loading();" action="#" th:action="@{|/api/${repoToScanOwner}/${repoToScanName}|}" th:object="${apiData}" method="post">
+    	<fieldset>
+    		<h3 class="repoForm-title">Enter the requested information to start the tool</h3>
+    		<input type="text" placeholder="Repository Owner" th:field="*{repoToScanOwner}" />
+       		<input type="text"  placeholder="Repository Name" th:field="*{repoToScanName}" />
+       		<input class="action-button" id ="lala" type="submit" value="Submit" disabled="disabled"/> <input class="action-button" type="reset" value="Reset" />
+    	</fieldset>
+    	
+    </form>
+    
+    
+	    <div class="load-wrapp">
+		    <div class="load-3">
+		        <p>Loading Repository info</p>
+		        <div class="line"></div>
+		        <div class="line"></div>
+		        <div class="line"></div>
+		    </div>
+	      </div>
+      
+      <h4 id="warning"> Note: The startup may take a while depending on the size of the requested repository. </h4>
+    
+</body>
+</html>

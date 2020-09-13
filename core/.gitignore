@@ -1,0 +1,13 @@
+.classpath
+.project
+.settings
+target
+manualTests
+fenix-framework.properties
+jmeter.log
+*.jtl
+*.log
+*.hprof
+*.txt
+infer-out
+.DS_Store
